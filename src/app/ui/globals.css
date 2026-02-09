@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  margin: 0;
+  padding: 0;
+  background: lightgrey;
+  background-image: url(/gray_bkg.jpg);
+  background-repeat: repeat;
+}
+
+body {
+  margin: 0;
+  padding: 5px;
+  padding-bottom: 40px;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  div[class^='grid-item-'], div[class*=' grid-item-'] {
+    @apply border-black border-2 bg-no-repeat bg-cover bg-center flex justify-center items-center;
+  }
+}
+
+
+/* Main Elements */
+
+.btn {
+  border: none;
+  padding: 6px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 8px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  border: 3px solid black !important;
+  border-radius: 0;
+  box-shadow: 3px 3px black, 5px 5px white;
+}
+
+.btn a {
+  text-decoration: none;
+  color: black;
+}
+
+.speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border-radius: .4em;
+  margin: 15px;
+  padding: 5px;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #ffffff;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.skills-header {
+  background-color: white;
+  border-bottom: 2px solid black;
+  min-height: 20%;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  align-items: center;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill {
+  border: 2px solid black;
+  color: black;
+  background-color: antiquewhite;
+  padding: 10px 10px;
+  text-align: center;
+  margin: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  align-content: center;
+}
+
