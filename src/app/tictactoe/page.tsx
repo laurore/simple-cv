@@ -76,10 +76,6 @@ function TicTacToe() {
 
         if (winner) {
             setWin(true);
-                if(win) {
-                    console.log("vsjo zaebisj");
-                }
-
             setWinner(winner);
         } else {
             if (cells === 0) {
